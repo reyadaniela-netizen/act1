@@ -1,0 +1,148 @@
+
+# Resumen Completo: Capítulo 2 – Ingeniería del Conocimiento
+
+---
+
+## 1. Conceptos Fundamentales
+
+### El Conocimiento
+En el ámbito de la Inteligencia Artificial (IA), el conocimiento se define como la combinación de esquemas o estructuras de datos con procedimientos interpretativos que hacen posible manifestar un comportamiento inteligente. Está compuesto por hechos, conceptos, procedimientos, ideas, abstracciones, reglas y asociaciones destinadas a modelar el mundo real. A nivel individual, es el resultado de un proceso de aprendizaje donde intervienen la adquisición y el almacenamiento con el fin de incrementar la capacidad de una persona para ejecutar acciones efectivas.
+
+El texto clasifica el conocimiento en tres tipos fundamentales:
+* **Conocimiento declarativo:** Se expresa a través de hechos o atributos correspondientes a un objeto, persona o concepto abstracto, así como las relaciones que se dan entre ellos.
+* **Conocimiento procedural:** Consiste en el conjunto de reglas basadas en conocimiento que los expertos aplican directamente para resolver problemas y generar nuevo conocimiento.
+* **Metaconocimiento:** Es el conocimiento sobre el propio conocimiento y sobre la experiencia previa. Reside en el motor de inferencia y, en IA, describe la operación de los sistemas basados en conocimiento, detallando sus propias capacidades de razonamiento.
+
+### Roles en el Desarrollo de un Sistema Experto
+La construcción de un Sistema Experto (SE) o Sistema Basado en el Conocimiento (SBC) involucra a tres participantes esenciales:
+1. **Ingeniero de Conocimiento (ICO):** Especialista informático con dominio técnico en el desarrollo y ejecución de sistemas expertos. Debe dominar las herramientas de programación, poseer habilidades de comunicación efectiva y contar con nociones de psicología para interpretar el lenguaje y las expresiones del experto humano. Sus funciones son extraer el conocimiento del especialista (mediante preguntas u otros métodos), estructurarlo formalmente en la base de conocimiento e implementarlo en la computadora.
+2. **Experto Humano:** Persona de prestigio y amplia trayectoria que pone a disposición su experiencia empírica para preservarla y difundirla a través de un sistema informático.
+3. **Usuario:** Destinatario final del software. Su nivel de formación y necesidades deben ser considerados de forma obligatoria durante el diseño del sistema.
+
+---
+
+## 2. Definición y Alcance de la Ingeniería del Conocimiento
+
+La Ingeniería del Conocimiento (IC) cuenta con dos definiciones formales:
+* **Definición estricta:** Rama orientada a la adquisición, representación, validación, inferenciación, explicación y mantenimiento continuo del conocimiento.
+* **Definición amplia:** Área que describe el proceso integral de desarrollo y mantenimiento de los sistemas de inteligencia artificial.
+
+Como disciplina de la IA, la IC construye aplicaciones informáticas en dominios complejos donde la informática tradicional no resulta efectiva. En estos entornos no se emplean algoritmos formales convencionales, ya que el conocimiento suele presentarse de forma desestructurada, inconsistente, incompleta o imprecisa.
+
+Dado que el lenguaje natural del experto humano no puede ser interpretado directamente por una computadora, el ingeniero de conocimiento debe estudiar el área de trabajo, conformar un glosario mental de términos esenciales y asimilar los conceptos clave antes de programar.
+
+De forma global, la disciplina articula tres fases estructurales:
+1. **Adquisición del conocimiento:** Extracción del conocimiento desde los expertos humanos o fuentes documentales.
+2. **Representación del conocimiento:** Codificación formal donde el ingeniero hace explícitas las reglas y procedimientos para resolver problemas.
+3. **Base de conocimiento:** Módulo final donde la información se incorpora tal como se obtiene, pues el orden de ingreso no altera los resultados; cada fragmento de conocimiento tiene sentido por sí mismo y puede interpretarse de manera aislada sin depender del contexto general. Su mecanismo más habitual son las **reglas de producción** (implicaciones lógicas: *determinadas condiciones conducen a ciertas consecuencias* o *ciertas causas producen ciertos efectos*), enfoque denominado programación orientada a reglas.
+
+---
+
+## 3. Procesos Fundamentales de la Ingeniería del Conocimiento
+
+La construcción y operación de un sistema experto integra cinco actividades coordinadas:
+1. **Adquisición del conocimiento:** Extracción sistemática a partir de expertos humanos, libros, revistas, artículos, sensores o archivos digitales.
+2. **Representación del conocimiento:** Organización y estructuración formal del conocimiento dentro de la base de conocimiento.
+3. **Validación del conocimiento:** Comprobación rigurosa de que las soluciones y dictámenes del sistema se asemejen a la realidad; es decir, que su desempeño sea idéntico al que tendría un experto humano real ante el mismo problema.
+4. **Inferencia del conocimiento:** Diseño y desarrollo del software (motor de inferencia) encargado de procesar deducciones lógicas para ofrecer orientación y respuestas útiles al usuario.
+5. **Explicación y justificación:** Programación de módulos que capacitan al sistema para argumentar y justificar de manera transparente el porqué de sus conclusiones.
+
+---
+
+## 4. El Proceso de Adquisición del Conocimiento (AC)
+
+La adquisición del conocimiento es la etapa central y el cuello de botella tradicional en la creación de sistemas expertos. Su objetivo consiste en comprender con precisión cómo un especialista humano realiza una actividad para poder automatizarla.
+
+### Fuentes de Conocimiento
+* **Fuentes Estáticas (Secundarias):** Información documental y tangible cuyo contenido no se altera. Permiten al ingeniero asimilar el vocabulario técnico y los principios del dominio. Ejemplos: libros, revistas especializadas, artículos científicos, manuales y grabaciones.
+* **Fuentes Dinámicas (Primarias):** Información viva, variable, cambiante e inexacta basada en la experiencia directa del ser humano, representada fundamentalmente por el experto.
+
+*(Nota sobre el ámbito formativo: en la enseñanza, el docente actúa como el experto que organiza el conocimiento, el diseño instruccional estructura el proceso y su función primordial es facilitar dicha adquisición).*
+
+### Las 5 Etapas de la Adquisición del Conocimiento
+1. **Identificación:** Se delimita el problema y sus características generales. Si es complejo, se descompone en subproblemas, se identifican los participantes y se definen los recursos disponibles mientras el ICO aprende el funcionamiento del entorno.
+2. **Entendimiento:** Se diferencian los conceptos esenciales y las relaciones que gobiernan la toma de decisiones. Se evalúa qué información se emplea, si las reglas son la alternativa viable para representarla y cómo extraer los datos de forma segura.
+3. **Formalización:** Se traduce y organiza el conocimiento para integrarlo en la base de conocimiento (conectando la adquisición con la representación formal). Se seleccionan las herramientas de software y hardware. Constituye una de las etapas más difíciles por el desafío psicológico que implica extraer el conocimiento de las personas.
+4. **Implementación:** Se programa el conocimiento en el ordenador para desarrollar un prototipo funcional del sistema experto, incorporando mejoras y ajustes progresivos.
+5. **Pruebas:** El ingeniero somete el sistema a casos de estudio y ejemplos prácticos. Los resultados se contrastan con el experto humano para revisar las reglas, corregir inconsistencias y validar la exactitud del sistema. Este ciclo involucra iteraciones de comprensión, reformulación, rediseño y depuración.
+
+---
+
+## 5. Representación del Conocimiento (KR)
+
+La representación del conocimiento consiste en tomar el material extraído y estructurarlo de manera formal para que sea comprensible tanto por los usuarios como por el sistema computacional. La elección del modelo depende del problema a resolver y de las técnicas de inferencia requeridas.
+
+### Criterios de Selección de un Esquema KR
+Para considerarse adecuado, el modelo formal debe cumplir con cinco propiedades:
+* **Sencillo:** Fácil de modificar y manipular manualmente o mediante algoritmos automáticos.
+* **Fácil de modificar:** Debe admitir la incorporación de nuevos conocimientos sin alterar la operatividad del sistema.
+* **Transparente:** Capaz de evidenciar de forma inmediata cualquier inconsistencia o incoherencia interna.
+* **Independiente:** Debe facilitar la reutilización de sentencias y procedimientos, permitiendo añadir, alterar o suprimir unidades informativas aisladas sin afectar al resto de la base de conocimiento ni al sistema.
+* **Relacional:** Debe permitir establecer vínculos claros y directos entre conceptos.
+
+---
+
+### Principales Esquemas de Representación
+
+#### 1. Reglas de Lógica Simbólica
+* **Lógica Proposicional:** Forma básica de lógica booleana donde cada hecho o enunciado se representa mediante un símbolo (p, q, r) al que se le asigna un valor de verdad (Verdadero o Falso), evaluable a través de tablas de verdad y Fórmulas Bien Definidas (FBD). Emplea los operadores de conjunción (∧), disyunción (∨), negación (∼), implicación (→) y equivalencia (≡). Sus reglas de inferencia clásicas son:
+  * *Modus Ponendo Ponens* (afirmando afirma): Si la implicación es cierta y el antecedente es verdadero, el consecuente es verdadero: [(P → Q) ∧ P] → Q.
+  * *Modus Tollendo Tollens* (negando niega): Si la implicación es cierta y el consecuente es falso, el antecedente es falso: [(P → Q) ∧ ∼Q] → ∼P.
+  * *Modus Tollendo Ponens* (negando afirma): En una disyunción verdadera, si una proposición es falsa, la otra obligatoriamente es verdadera: [(P ∨ Q) ∧ ∼Q] → P.
+* **Lógica de Predicados:** Lenguaje formal centrado en la sintaxis y la estructura interna de los enunciados lógicos más que en su significado global. Su alfabeto formal incluye:
+  * *Constantes:* Elementos específicos del dominio (objetos físicos o abstractos), simbolizados con letras mayúsculas.
+  * *Variables:* Representan elementos genéricos sin designar uno en concreto, expresadas en letras minúsculas.
+  * *Funciones:* Identifican elementos resultantes de transformaciones entre objetos del dominio; a diferencia de los predicados (que devuelven Verdadero o Falso), evaluar una función genera un elemento del universo.
+  * *Predicados:* Expresan relaciones específicas y construyen fórmulas atómicas evaluadas como verdaderas o falsas.
+  * *Operadores lógicos:* Conectivos booleanos de conjunción, disyunción, negación, implicación y equivalencia.
+  * *Cuantificadores:* Existencial (∃, "existe") y Universal (∀, "para todo").
+
+#### 2. Redes Semánticas (Redes Asociativas)
+Propuestas por Ross Quillian en 1968 como un modelo psicológico de la memoria semántica humana, representan el conocimiento mediante grafos estructurados en:
+* **Nodos:** Rectángulos rotulados que simbolizan elementos del dominio, atributos, estados, entidades o eventos.
+* **Enlaces (arcos):** Vectores dirigidos rotulados con el nombre de la relación.
+
+Las dos relaciones más frecuentes son **ES-UN** (indica que un elemento pertenece a una clase compartiendo sus propiedades) y **ES-SUBCONJUNTO**. El razonamiento opera mediante **propagación de la activación** siguiendo los enlaces del grafo. Su debilidad principal es que carecen de una convención semántica rígida universal; el significado depende del software que las procesa, por lo que sus deducciones no son necesariamente válidas.
+
+#### 3. Gráficos Conceptuales (Mapas de Conocimiento)
+Representaciones visuales que modelan los factores de un problema organizados mediante secuencias temporales de precedencia, dependencias jerárquicas y vínculos directos de causa-efecto.
+
+#### 4. Árboles de Decisión
+Estructuras jerárquicas que representan los espacios de búsqueda para resolver un problema, donde la amplitud del espacio equivale al número de nodos y ramas. Los nodos grafican metas o puntos de evaluación, mientras que las ramas representan decisiones, conclusiones o resultados. Se trazan situando el nodo inicial a la izquierda y desplegando los efectos parciales hacia la derecha hasta alcanzar el nodo final.
+
+#### 5. Frames (Marcos) o Slots
+Estructuras de datos diseñadas para representar objetos y situaciones basándose en el principio de que los seres humanos interpretan escenarios nuevos a partir de experiencias previas similares.
+* Un marco descompone una entidad en ranuras (**slots**, campos o casillas) que contienen valores de atributos, los cuales pueden dividirse en facetas (**facets**) para mayor precisión.
+* Se organizan jerárquicamente bajo un mecanismo de **herencia**: al modificar el valor del slot en el nivel superior, todas las instancias subordinadas heredan automáticamente el cambio.
+* Integran aspectos declarativos con procedimientos automáticos vinculados a los slots que se disparan ante eventos específicos.
+* Sus estados operativos son: **Activo** (en la lista de hipótesis para ser evaluado), **Semiactivo** (hipótesis sugerida sin peso suficiente para evaluarse de inmediato) e **Inactivo** (elemento descartado o nunca instanciado).
+
+#### 6. Diagramas Lógicos
+Clasifican el conocimiento en dos orientaciones:
+* **Esquemas Declarativos:** Enfocados en acumular hechos estáticos acompañados de información descriptiva sobre su uso.
+* **Esquemas Procedimentales:** Estructuran el conocimiento como reglas dinámicas que dictan los procedimientos para utilizar la información.
+
+---
+
+## 6. Técnicas y Métodos de Adquisición de Conocimiento
+
+Las metodologías para extraer conocimiento se dividen en tres categorías:
+
+### 1. Métodos Manuales
+Se fundamentan en la interacción directa entre el ingeniero de conocimiento y el experto, o en la revisión de material documental. Aunque suelen ser lentos, costosos y propensos a inexactitudes, logran capturar información tácita y cualitativa que las herramientas automáticas no detectan.
+* **Entrevistas:**
+  * *Estructurada:* Proceso formal, planificado y orientado a metas específicas. Se apoya en cuestionarios preparados y en el estudio previo del dominio, reduciendo la ambigüedad y neutralizando la subjetividad del especialista. Es el método ideal para sesiones repetidas, ya que permite contrastar y verificar respuestas.
+  * *Semiestructurada:* Utiliza una guía de temas o preguntas clave sin forzar un orden rígido, permitiendo una conversación técnica fluida.
+  * *No estructurada:* Conversación informal orientada a obtener un panorama preliminar del área de trabajo. Presenta el riesgo de que el experto omita conocimientos que asume como obvios.
+* **Métodos de Búsqueda (Rastreo del razonamiento):** Analizan la trayectoria del pensamiento del especialista al resolver un problema. El principal es el **Análisis de Protocolos**, técnica donde el experto resuelve un caso mientras describe verbalmente y paso a paso sus decisiones mentales.
+* **Otras técnicas manuales:** Análisis de casos particulares, sesiones de comentarios en video sobre tareas en vivo, mapas conceptuales, lluvia de ideas, matrices de escalamiento multidimensional (análisis de proximidad con regresión por mínimos cuadrados), exámenes técnicos, informes narrativos y el uso de prototipos preliminares para estimular la retroalimentación del experto.
+
+### 2. Métodos Semiautomatizados
+Herramientas de software diseñadas para asistir a los participantes humanos en la construcción de la base de conocimiento:
+* **Soporte al Experto Humano:** Aplicaciones con interfaces guiadas para que el especialista ingrese, estructure y corrija reglas por su cuenta, reduciendo costos y tiempos de consulta. Su técnica más destacada es el **Análisis de Rejilla (*Repertory Grid Analysis*)**, fundamentado en la Teoría de los Constructos Personales de George Kelly; se aplica cuando el experto tiene dificultades para verbalizar su razonamiento, ayudándole a clasificar elementos y atributos a partir de su modelo perceptual del mundo.
+* **Soporte al Ingeniero de Conocimiento:** Herramientas que incrementan la productividad técnica, tales como editores gráficos interactivos para evitar errores sintácticos, módulos de explicación para depurar inconsistencias y sistemas de documentación automática.
+
+### 3. Métodos Automatizados
+Procedimientos computacionales que reducen al mínimo o prescinden por completo de la intervención directa del especialista y del ingeniero de conocimiento, con el fin de abaratar costos, incrementar la productividad y elevar la calidad de los datos extraídos:
+* **Reglas de Inducción Automatizadas:** Aplican razonamiento inductivo (de lo particular a lo general) mediante algoritmos que convierten matrices de ejemplos, atributos y valores en árboles de decisión y reglas lógicas. Su algoritmo representativo es el **ID3** (*Interactive Dichotomizer Version 3*), el cual descarta atributos irrelevantes y organiza de forma óptima los más discriminantes. Permiten descubrir nuevo conocimiento y operar en dominios complejos, pero presentan restricciones: generan reglas difíciles de interpretar para los humanos, exigen matrices con grandes cantidades de ejemplos y solo funcionan adecuadamente en problemas deterministas basados en reglas con pocos atributos.
+* **Aprendizaje Automatizado (*Machine Learning*):** Programas de base heurística donde la computadora aprende directamente a partir de la experiencia según cómo se almacene y procese el conocimiento.

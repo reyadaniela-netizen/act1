@@ -1,0 +1,163 @@
+
+# Resumen Extenso: Sistemas Expertos Basados en Reglas
+
+---
+
+## 1. Introducción y Conceptos Básicos
+
+Muchas situaciones del mundo real se rigen por principios deterministas, tales como los sistemas de control de tráfico ferroviario o aéreo, los protocolos de seguridad industrial y las plataformas de transacciones bancarias. En estos entornos, los **sistemas expertos basados en reglas** constituyen una herramienta eficiente y representan la metodología más simple dentro de la inteligencia artificial clásica. 
+
+En estos sistemas intervienen dos componentes fundamentales con características y ciclos de vida bien diferenciados:
+
+* **Los Hechos:** Representan la información que se conoce sobre una situación particular en un instante determinado. Son dinámicos, no tienen carácter permanente, varían de una consulta a otra y se almacenan en la **memoria de trabajo**.
+* **Las Reglas:** Representan relaciones generales y estáticas que gobiernan a un conjunto de objetos en situaciones deterministas. Son de naturaleza permanente, se almacenan en la **base de conocimiento** y no cambian entre ejecuciones sucesivas, salvo que el sistema incorpore mecanismos explícitos de aprendizaje automatizado.
+
+El funcionamiento global se apoya en que la base de conocimiento reúne el conjunto de reglas del problema, mientras que el **motor de inferencia** deduce conclusiones aplicando las leyes de la lógica clásica sobre los hechos conocidos.
+
+---
+
+## 2. Estructura y Normalización de las Reglas
+
+### Definición y Sintaxis
+Una regla es una afirmación lógica que vincula dos o más objetos y se divide en dos bloques:
+$$\text{Si } \langle\text{premisa}\rangle \text{ entonces } \langle\text{conclusi\'on}\rangle$$
+
+1. **Premisa (o antecedente):** Expresión lógica situada entre las palabras clave *Si* y *entonces*. Contiene una o varias afirmaciones objeto-valor unidas por operadores lógicos ($y$, $o$, $no$).
+2. **Conclusión (o consecuente):** Expresión lógica ubicada tras la palabra clave *entonces*.
+
+Cuando la premisa o la conclusión contienen una única afirmación objeto-valor, se denominan **expresiones lógicas simples**. Si contienen más de una afirmación conectada por operadores lógicos, se denominan **expresiones lógicas compuestas**. Una regla que únicamente contiene expresiones lógicas simples se llama **regla simple**; en cualquier otro caso, se trata de una **regla compuesta**.
+
+### Ejemplos Clásicos de Representación
+* **El Cajero Automático:** Modela la autorización de retiro de dinero mediante siete objetos discretos (*Tarjeta*, *Fecha*, *NIP*, *Intentos*, *Balance*, *Límite*, *Pago*). La *Regla 1* es una regla compuesta cuya premisa enlaza seis condiciones con el operador $y$ para conceder el dinero ($Pago = autorizado$), mientras que las *Reglas 2 a 7* son reglas simples que definen de forma directa cuándo debe rechazarse la operación ($Pago = no\ autorizado$) ante cualquier fallo específico.
+* **Base de Datos de Gente Famosa:** Clasifica a $N$ individuos mediante tres atributos binarios (*Americano*, *Político*, *Mujer*), generando un espacio de hasta $2^3 = 8$ conjuntos disjuntos para identificar inequívocamente a cada persona.
+
+### Restricciones y Sustitución de Reglas
+Con frecuencia, los motores de inferencia imponen restricciones operativas para facilitar la programación del software sin perder generalidad formal:
+1. Prohibir el operador lógico disyuntivo ($o$) en las premisas.
+2. Limitar las conclusiones a expresiones lógicas simples.
+3. Normalizar la sintaxis hacia formas estándar (como la Forma Normal Conjuntiva).
+
+Cualquier regla compleja suministrada por un experto humano puede transformarse en un conjunto de reglas equivalentes más sencillas mediante el procedimiento de **sustitución de reglas**. Por ejemplo, una regla con disyunción en el antecedente se descompone en dos reglas independientes:
+$$\text{Si } (A \lor B) \rightarrow C \iff \begin{cases} \text{Si } A \rightarrow C \\ \text{Si } B \rightarrow C \end{cases}$$
+De igual forma, aplicando las leyes de De Morgan, la premisa $\neg(A \lor B)$ se sustituye por $\neg A \land \neg B$.
+
+---
+
+## 3. El Motor de Inferencia y sus Componentes
+
+El motor de inferencia procesa conjuntamente los hechos y las reglas para derivar nuevo conocimiento. 
+* En **lógica monótona**, los hechos de la memoria de trabajo corresponden únicamente a los datos iniciales y a los deducidos a lo largo de la ejecución.
+* En **lógica no-monótona**, el sistema tiene la capacidad añadida de insertar, modificar o suprimir hechos según cambie el contexto.
+
+### Fases de Interpretación de Reglas
+El ciclo interno de ejecución del motor de inferencia opera a través de tres pasos:
+1. **Reconocimiento de patrones:** Se comparan las premisas de las reglas con los hechos vigentes en la memoria de trabajo. Aquellas reglas cuyas condiciones se satisfacen por completo se incorporan a una estructura priorizada denominada **Agenda**.
+2. **Resolución de conflictos:** Se selecciona una regla específica de la agenda aplicando la estrategia de control establecida.
+3. **Ejecución:** Se dispara la conclusión de la regla seleccionada, modificando la memoria de trabajo (añadiendo nuevos hechos deducidos o actualizando estados).
+
+---
+
+## 4. Reglas de Inferencia y el Mecanismo de Resolución
+
+Para obtener deducciones, el motor de inferencia combina reglas deductivas elementales y estrategias de control.
+
+```
+                     MECANISMOS DE INFERENCIA
+                                │
+        ┌───────────────────────┴───────────────────────┐
+        ▼                                               ▼
+Conclusiones Simples                           Conclusiones Compuestas
+(Una sola regla)                               (Múltiples reglas)
+  ├── Modus Ponens                               ├── Mecanismo de Resolución
+  └── Modus Tollens                              ├── Encadenamiento de Reglas
+                                                 └── Compilación de Reglas
+```
+
+### Modus Ponens frente a Modus Tollens
+Ambos procedimientos derivan **conclusiones simples** (a partir de una sola regla), pero operan en sentidos opuestos y de forma complementaria:
+
+| Característica | Modus Ponens | Modus Tollens |
+| :--- | :--- | :--- |
+| **Formulación lógica** | $[(A \rightarrow B) \land A] \implies B$ | $[(A \rightarrow B) \land \neg B] \implies \neg A$ |
+| **Sentido del razonamiento** | Hacia adelante (de la premisa a la conclusión). | Hacia atrás (de la conclusión a la premisa). |
+| **Requisito de entrada** | Exige conocer los valores de los objetos de la premisa. | Exige conocer los valores de los objetos de la conclusión. |
+| **Función en el sistema** | Es la regla de inferencia base más extendida. | Permite "invertir" reglas sin duplicar la base de conocimiento. |
+
+*Efecto de expansión:* Emplear simultáneamente Modus Ponens y Modus Tollens sobre una regla $\text{Si } A \rightarrow B$ equivale a disponer de dicha regla y de su contrarrecíproca $\text{Si } \neg B \rightarrow \neg A$ bajo Modus Ponens. Si un motor solo cuenta con Modus Ponens, puede ser incapaz de deducir hechos válidos ante evidencias negativas en la conclusión, mientras que la integración de Modus Tollens resuelve esta limitación.
+
+### El Mecanismo de Resolución
+Permite derivar **conclusiones compuestas** a partir de dos o más reglas encadenadas. Se ejecuta en tres etapas:
+1. Las reglas se transforman a expresiones lógicas disyuntivas equivalentes ($\text{Si } A \rightarrow B \iff \neg A \lor B$; $\text{Si } B \rightarrow C \iff \neg B \lor C$).
+2. Se combinan algebraicamente eliminando la variable intermedia compartida: $(\neg A \lor B) \land (\neg B \lor C) \implies \neg A \lor C$.
+3. La expresión resultante se contrasta con los hechos conocidos (por ejemplo, si se sabe que $A$ es cierto, se deduce de inmediato que $C$ es cierto).
+
+Si el motor no puede determinar la verdad o falsedad de una variable intermedia, debe optar entre abandonar la regla o interrogar al usuario a través del subsistema de adquisición. Cuando una afirmación no puede demostrarse cierta, el sistema puede adoptar formalmente la **hipótesis del mundo cerrado**, asumiendo que es falsa.
+
+---
+
+## 5. Estrategias de Encadenamiento y Compilación
+
+### A. Encadenamiento de Reglas (Hacia Adelante)
+Estrategia dirigida por datos. Comienza asignando a los objetos sus valores iniciales conocidos (síntomas o evidencias de partida) y ejecuta en ciclos sucesivos todas las reglas cuyas premisas se cumplan. Las conclusiones obtenidas generan nuevos hechos que se integran a la memoria de trabajo, repitiendo el proceso hasta que no se puedan deducir más elementos.
+
+### B. Encadenamiento Orientado a un Objetivo (Hacia Atrás)
+Estrategia guiada por metas. El usuario o el sistema designa una **variable objetivo** (por ejemplo, una hipótesis diagnóstica) y el algoritmo retrocede buscando reglas que la contengan en su consecuente:
+* Si los valores de la premisa de la regla seleccionada no se conocen, esos objetos se convierten en sub-objetivos inmediatos y se almacenan en una lista de *ObjetivosPrevios*.
+* Si se agotan las reglas aplicables sin poder validar un sub-objetivo, el algoritmo interroga puntualmente al usuario para solicitar el dato faltante.
+* Este método es eficiente porque descarta ramas enteras de la base de conocimiento que resultan irrelevantes para verificar la meta seleccionada.
+
+### C. Compilación de Reglas (Ecuaciones Objetivo)
+Cuando el conjunto de entradas (datos disponibles) y de salidas (objetivos perseguidos) está prefijado de antemano, la secuencia de reglas encadenadas puede compilarse algebraicamente en **ecuaciones objetivo**. De este modo, los objetivos finales se expresan directamente en función de las variables de entrada primitivas (por ejemplo, derivando reglas directas consolidadas), lo que permite evaluar el sistema de forma instantánea sin necesidad de recorrer el árbol de reglas en tiempo de ejecución.
+
+---
+
+## 6. Subsistema de Control de la Coherencia
+
+En problemas con un volumen considerable de conocimiento, tanto los expertos humanos como los usuarios pueden introducir datos contradictorios. Si entran inconsistencias a la base de conocimiento, el sistema experto arrojará conclusiones absurdas y perderá fiabilidad. El control de coherencia actúa sobre dos niveles:
+
+### 1. Coherencia de las Reglas
+* **Definición:** Un conjunto de reglas es **coherente** si existe al menos una combinación de valores de los objetos que conduzca a conclusiones no contradictorias.
+* **Valores No Factibles:** Un valor $a$ para un objeto $A$ es no factible si las conclusiones derivadas de fijar $A = a$ contradicen cualquier combinación de valores del resto de los objetos. El sistema debe detectar estos valores y eliminarlos de forma permanente de las listas de opciones para evitar inconsistencias.
+* **Validación de Reglas Nuevas:** Debe comprobarse la coherencia cada vez que se pretende añadir una nueva regla a la base de conocimiento. Si la nueva regla choca con las preexistentes (por ejemplo, teniendo la misma premisa pero conclusiones opuestas), se rechaza y se devuelve al especialista para su corrección.
+
+### 2. Coherencia de los Hechos
+Impide que el usuario suministre datos que choquen entre sí o que contradigan las reglas almacenadas. El sistema aplica cinco directrices operativas:
+1. Eliminar automáticamente los valores no factibles de los objetos en cuanto son detectados.
+2. Comprobar que los hechos ingresados no violen ninguna regla de la base de conocimiento.
+3. Proporcionar al usuario únicamente la lista de objetos pendientes de asignación.
+4. Desplegar y aceptar exclusivamente los valores factibles que sean compatibles con el estado actual de la consulta.
+5. **Actualizar de forma continua e inmediata** la base de conocimiento tras la incorporación de cada hecho o conclusión. No realizar esta actualización instantánea permitiría que evidencias mutuamente excluyentes convivan en la memoria de trabajo.
+
+---
+
+## 7. Casos Prácticos Documentados
+
+### A. El Enigma de los Agentes Secretos
+Modela a cuatro agentes (*Alberto*, *Luisa*, *Carmen* y *Tomás*) asignados a cuatro países (*Egipto*, *Francia*, *Japón* y *España*). Se reciben cuatro telegramas cruzados sobre sus ubicaciones, con la condición de que Tomás siempre miente y los otros tres dicen la verdad. 
+* Cada mensaje genera dos reglas (una si Tomás está en el país emisor y otra si no lo está), totalizando ocho reglas iniciales.
+* Dado que las premisas básicas no bastan para deducir las asignaciones, se añade la restricción estructural de que **exactamente un agente puede ocupar cada país**.
+* Expresar esta exclusión requeriría 12 reglas por país (3 por cada uno de los 4 agentes); sin embargo, recurriendo a la regla de inferencia **Modus Tollens**, el total se reduce a solo **seis reglas por país** (24 reglas adicionales en total), eliminando redundancias y permitiendo al motor de inferencia resolver el problema sin contradicción.
+
+### B. Control de Tráfico Ferroviario
+Ilustra el diseño de un sistema experto para evitar colisiones en un trazado ferroviario bidireccional compuesto por 5 vías ($S_1$ a $S_5$) y 14 señales semafóricas ($U_1$ a $U_8$ en la parte superior; $L_1$ a $L_6$ en la inferior).
+* Se diseña una base de conocimiento compuesta por **22 reglas deterministas** que coordinan la ocupación de las vías y el color de las señales (*verde* o *rojo*).
+* El sistema garantiza la seguridad impidiendo que señales opuestas se pongan en verde a la vez, bloqueando el acceso a vías ya ocupadas y forzando señales en rojo mediante encadenamientos de reglas, Modus Tollens y la actualización continua de la memoria de trabajo conforme los trenes avanzan.
+
+---
+
+## 8. El Subsistema de Explicación
+
+Para satisfacer las exigencias de los usuarios, un sistema experto no debe limitarse a entregar un resultado; debe ser capaz de justificar el razonamiento seguido. 
+
+En los sistemas basados en reglas, esta tarea resulta directa: dado que cada deducción proviene del disparo de reglas específicas, el motor de inferencia almacena el registro exacto de ejecución. Así, el subsistema de explicación despliega ante el usuario:
+1. La lista de **hechos iniciales** suministrados.
+2. La secuencia ordenada de **conclusiones intermedias** obtenidas.
+3. Las **reglas específicas** que se fueron activando para respaldar cada deducción hasta alcanzar la meta final.
+
+---
+
+## 9. Limitaciones y Transición hacia la Incertidumbre
+
+Aunque los sistemas basados en reglas son rigurosos y eficientes en entornos deterministas, presentan serias limitaciones cuando se enfrentan a dominios reales caracterizados por la ambigüedad o la falta de certeza. 
+
+En ámbitos como el diagnóstico médico, la presencia de determinados síntomas no garantiza de forma absoluta la presencia de una enfermedad, aun cuando exista una fuerte correlación observable. Esta restricción hace necesario extender la lógica clásica binaria mediante modelos que incorporen medidas cuantitativas de incertidumbre, dando paso a los **sistemas expertos basados en probabilidad y a los modelos de redes probabilísticas**.
