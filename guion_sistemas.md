@@ -1,4 +1,4 @@
-# Guion de presentación — Sistemas Expertos
+# Guion de presentación — Sistemas Expertos.
 
 ## Introducción — Camila
 
