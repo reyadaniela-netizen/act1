@@ -19,3 +19,7 @@ README.MD
 4. Liga al video de yt en README.md
 5. Liga al articulo en README.md
 6. Resumen PDF Resumen.pdf
+   
+
+   Liga al video
+https://youtu.be/tW9lEWcw8uc
