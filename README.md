@@ -17,8 +17,12 @@ README.MD
 2. Documento PDF tarea1.pdf
 3. Presentación SistemasExpertoss.pdf
 4. Liga al video de yt en README.md
-5. Liga al articulo en README.md
-6. Resumen PDF Resumen.pdf
+   Guion en guion_sistemas.md
+6. Liga al articulo en README.md
+7. Resumen
+   Resumen0-Ingenieria-del-conocimiento(complementaria).pdf
+   ResumensistemasExpertosBasadosEnReglas.pdf
+
    
 
    Liga al video
