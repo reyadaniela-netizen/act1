@@ -181,3 +181,5 @@ Como conclusión sobre los *sistemas expertos, es fundamental destacar que repre
   * Aunque la IA generativa ha cobrado un gran protagonismo en los últimos años, suele presentar riesgos como las "alucinaciones" (invención de datos) o falta de determinismo.
   * Los sistemas expertos, al regirse por reglas estrictas y deterministas, *no cometen ese tipo de inconsistencias ni inventan información*.
 * *Vigencia y aplicación actual:* Su combinación e integración con modelos modernos de IA los mantiene como una herramienta vigente, robusta e indispensable en el entorno tecnológico actual.
+
+* Liga al video https://youtu.be/tW9lEWcw8uc
