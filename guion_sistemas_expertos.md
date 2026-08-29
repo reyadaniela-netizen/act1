@@ -107,7 +107,7 @@ Entonces, podemos ver que los Sistemas Expertos fueron una etapa importante en l
 
 ## Diapositiva 8 — Tipos de Sistemas Expertos
 
-> Y conforme estos sistemas fueron desarrollándose, también surgieron diferentes formas de representar y utilizar el conocimiento. Por eso podemos encontrar distintos tipos de Sistemas Expertos.
+Y conforme estos sistemas fueron desarrollándose, también surgieron diferentes formas de representar y utilizar el conocimiento. Por eso podemos encontrar distintos tipos de Sistemas Expertos.
 
 El primer tipo son los **sistemas basados en reglas**. Estos trabajan principalmente con reglas del tipo «si-entonces». Por ejemplo, si una computadora no enciende y la fuente de alimentación no funciona, entonces el sistema puede recomendar revisar o reemplazar la fuente.
 
@@ -118,6 +118,39 @@ También tenemos los **sistemas basados en modelos**. Estos tienen un modelo de 
 Por último tenemos los **sistemas basados en redes semánticas**. Estos representan el conocimiento mediante conceptos y las relaciones que existen entre ellos. Por ejemplo, podemos relacionar un perro con el concepto de animal, y a partir de las relaciones entre conceptos el sistema puede obtener nueva información.
 
 Entonces, aunque los cuatro tipos buscan utilizar conocimiento para resolver problemas, la diferencia principal está en **cómo representan y utilizan ese conocimiento**.
+
+## Diapositiva 9 — Ventajas y limitaciones de los Sistemas Expertos
+
+### Ventajas
+
+- **Rapidez y capacidad de análisis:** Tienen una gran capacidad para procesar mucha información y aplicar una cantidad inmensa de reglas en poco tiempo.
+- **Disponibilidad:** A diferencia de los humanos, que necesitan descansar, comer o realizar otras actividades, los sistemas expertos están disponibles siempre que se requiera consultar información o ejecutar un proceso.
+- **Consistencia:** Aplican siempre las mismas reglas predefinidas a lo largo del tiempo, por lo que sus respuestas y evaluaciones son constantes y uniformes.
+- **Conservación del conocimiento experto:** Permiten documentar y almacenar el conocimiento de personas especializadas en un área específica. Esto evita que la información se pierda y permite suplir temporalmente la ausencia de un experto humano.
+
+---
+
+### Limitaciones
+
+- **Dependencia de la calidad del conocimiento:** Un sistema experto es tan bueno como la información y los datos que se le proporcionan. Si contiene reglas erróneas o datos incorrectos, las conclusiones tampoco serán válidas.
+- **Dificultad para adquirir conocimiento experto:** Extraer, organizar y codificar el conocimiento de expertos humanos es un proceso sumamente complejo, riguroso y costoso.
+- **Falta de sentido común:** A diferencia de los seres humanos, no poseen una comprensión natural del entorno. Están limitados a seguir estrictamente las reglas preestablecidas sin poder razonar más allá de ellas.
+  - *Ejemplo:* Un sistema experto de climatización detecta que la temperatura sube e incrementa la potencia del aire acondicionado al máximo, sin considerar que hay una ventana abierta por la cual se está desperdiciando energía.
+- **Riesgo de obsolescencia:** Las disciplinas y la ciencia evolucionan constantemente. Si la base de conocimiento no se actualiza con frecuencia, el sistema queda obsoleto rápidamente.
+
+---
+
+## Diapositiva 10 — Ejemplos de Sistemas Expertos en la historia
+
+### 1. MYCIN (Ámbito médico)
+Desarrollado para apoyar en el diagnóstico de infecciones bacterianas. Analizaba síntomas, resultados de laboratorio y datos del paciente utilizando aproximadamente **600 reglas** para identificar la posible bacteria causante y sugerir un tratamiento adecuado.
+
+### 2. DENDRAL (Ámbito químico)
+Diseñado para analizar datos obtenidos mediante espectrometría de masas y determinar la estructura molecular de compuestos químicos. Fue uno de los primeros sistemas en demostrar que el conocimiento especializado podía aplicarse eficazmente para resolver problemas científicos complejos.
+
+### 3. XCON (Ámbito de computación y negocios)
+Utilizado por *Digital Equipment Corporation* (DEC) para configurar sistemas informáticos según los requerimientos específicos de cada cliente. Aplicaba reglas para seleccionar componentes compatibles y optimizar el ensamblaje. Fue uno de los primeros sistemas expertos en implementarse con gran éxito a escala comercial.
+
 
 ---
 
@@ -136,3 +169,15 @@ Su desarrollo surgió principalmente de la investigación científica y de la ne
 Por esta razón, los Sistemas Expertos fueron una parte importante en la evolución de la Inteligencia Artificial, ya que demostraron que una computadora podía utilizar conocimientos y reglas para analizar información, razonar y apoyar la toma de decisiones.
 
 Muchas de estas ideas siguen presentes en diferentes sistemas de IA que utilizamos actualmente.
+
+---
+## Conclusión Emiliano: 
+
+Como conclusión sobre los *sistemas expertos, es fundamental destacar que representan herramientas de gran relevancia dentro del campo de la **Inteligencia Artificial (IA)*. Su propósito principal es emular el razonamiento y la lógica humana para resolver problemas complejos a partir de reglas predefinidas y bases de conocimiento estructuradas.
+
+* *Emulación de la lógica humana:* Permiten abordar y solucionar problemáticas específicas siguiendo estructuras lógicas formales y bases de datos especializadas.
+* *Eficiencia y consistencia:* Desde sus inicios, han demostrado un alto nivel de precisión, confiabilidad y consistencia en sus resultados.
+* *Complemento de la IA Generativa:* 
+  * Aunque la IA generativa ha cobrado un gran protagonismo en los últimos años, suele presentar riesgos como las "alucinaciones" (invención de datos) o falta de determinismo.
+  * Los sistemas expertos, al regirse por reglas estrictas y deterministas, *no cometen ese tipo de inconsistencias ni inventan información*.
+* *Vigencia y aplicación actual:* Su combinación e integración con modelos modernos de IA los mantiene como una herramienta vigente, robusta e indispensable en el entorno tecnológico actual.
