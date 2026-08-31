@@ -23,7 +23,8 @@ README.MD
    Resumen0-Ingenieria-del-conocimiento(complementaria).pdf
    ResumensistemasExpertosBasadosEnReglas.pdf
 
-   
+   Liga al articulo
+https://www.overleaf.com/read/xrjdknhbsnpd#8a1688
 
    Liga al video
 https://youtu.be/tW9lEWcw8uc
